@@ -1,0 +1,13 @@
+#!/system/bin/sh
+#simplify mount rw and mount ro
+#wrote by forcystos - SDX - sdx-developers.com
+case $1 in
+rw)
+  echo "Remounting /system (/dev/stl5) in read/write mode"
+  /system/bin/mount -o remount,rw /dev/stl5 /system;;
+ro)
+    echo "Remounting /system (/dev/stl5) in read-only mode"
+    /system/bin/mount -o remount,ro /dev/stl5 /system;;
+*)
+    echo "usage: remount rw   -or-   remount ro";;
+esac
